@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cuppa · té con leche</title>
+  <meta name="theme-color" content="#f6efe6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Cuppa">
+  <link rel="apple-touch-icon" href="icons/icon-180.png?v=2">
+  <link rel="icon" href="icons/icon-192.png?v=2">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="title">Cuppa<small>¿Va con leche? Y cómo prepararlo.</small></h1>
+  <header class="top">
+    <div class="search">
+      <input id="q" type="search" placeholder="Busca un té…" autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+    <div class="chips" id="chips">
+      <button data-f="all" class="on">Todos</button>
+      <button data-f="milk">Con leche</button>
+      <button data-f="ts">Tea Shop</button>
+      <button data-f="mc">Mercadona</button>
+      <button data-f="hm">Hornimans</button>
+      <button data-f="gen">Clásicos</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="view-search" class="view">
+      <p class="count" id="count"></p>
+      <ul class="list" id="results"></ul>
+    </section>
+
+    <section id="view-mine" class="view" hidden>
+      <h2>Mis tés</h2>
+      <p class="hint" id="mine-empty">Pulsa ☆ en cualquier té para guardarlo aquí, o <a href="#/analizar">añade uno tuyo</a>.</p>
+      <ul class="list" id="mine"></ul>
+      <p><a class="btn" href="#/analizar">+ Añadir un té que no está</a></p>
+    </section>
+
+    <section id="view-guide" class="view" hidden></section>
+
+    <section id="view-detail" class="view" hidden></section>
+
+    <section id="view-analyze" class="view" hidden></section>
+  </main>
+
+  <nav class="tabs">
+    <a href="#/" data-tab="search">🔍<span>Buscar</span></a>
+    <a href="#/mis-tes" data-tab="mine">⭐<span>Mis tés</span></a>
+    <a href="#/guia" data-tab="guide">📖<span>Guía</span></a>
+  </nav>
+
+  <script src="data.js"></script>
+  <script src="rules.js"></script>
+  <script src="methods.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
