@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cuppa · té con leche</title>
+  <meta name="theme-color" content="#f2f3f1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#17181b" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Cuppa">
+  <link rel="apple-touch-icon" href="icons/icon-180.png?v=3">
+  <link rel="icon" href="icons/icon-192.png?v=3">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fonts/young-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="title">Cuppa<small>¿Va con leche? Y cómo prepararlo.</small></h1>
+  <header class="top">
+    <div class="search">
+      <input id="q" type="search" placeholder="Busca un té…" autocomplete="off" autocorrect="off" spellcheck="false">
+    </div>
+    <div class="chips" id="chips" aria-label="Origen">
+      <button data-f="all" class="on">Todos</button>
+      <button data-f="milk">Con leche</button>
+      <button data-f="ts">Tea Shop</button>
+      <button data-f="mc">Mercadona</button>
+      <button data-f="hm">Hornimans</button>
+      <button data-f="gen">Clásicos</button>
+    </div>
+    <div class="chips types" id="types" aria-label="Tipo de té"></div>
+  </header>
+
+  <main>
+    <section id="view-search" class="view">
+      <aside class="install" id="install" hidden>
+        <p><b>Llévala en el móvil.</b> Toca Compartir y elige «Añadir a pantalla de inicio»: se abre como una app y funciona sin conexión.</p>
+        <button id="install-close" aria-label="Cerrar aviso">Cerrar</button>
+      </aside>
+      <p class="count" id="count"></p>
+      <ul class="list" id="results"></ul>
+      <button class="btn more" id="more" hidden></button>
+    </section>
+
+    <section id="view-mine" class="view" hidden>
+      <h2>Mis tés</h2>
+      <p class="hint" id="mine-empty">Pulsa ☆ en cualquier té para guardarlo aquí, o <a href="#/analizar">añade uno tuyo</a>.</p>
+      <ul class="list" id="mine"></ul>
+      <p><a class="btn" href="#/analizar">+ Añadir un té que no está</a></p>
+    </section>
+
+    <section id="view-guide" class="view" hidden></section>
+
+    <section id="view-detail" class="view" hidden></section>
+
+    <section id="view-analyze" class="view" hidden></section>
+  </main>
+
+  <div class="timer" id="timer" role="timer" aria-live="polite" hidden>
+    <span id="timer-label">Infusionando</span>
+    <b id="timer-time"></b>
+    <button id="timer-btn">Parar</button>
+  </div>
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <nav class="tabs">
+    <a href="#/" data-tab="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><span>Buscar</span></a>
+    <a href="#/mis-tes" data-tab="mine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><span>Mis tés</span></a>
+    <a href="#/guia" data-tab="guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5zM12 6.5v13"/></svg><span>Guía</span></a>
+  </nav>
+
+  <script src="data.js"></script>
+  <script src="rules.js"></script>
+  <script src="methods.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
